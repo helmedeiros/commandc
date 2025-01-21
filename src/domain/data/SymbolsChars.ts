@@ -1,0 +1,24 @@
+import type { CharEntry } from '../CharEntry';
+
+export const SYMBOLS_CHARS: readonly CharEntry[] = [
+  { char: '\u00A9', name: 'Copyright' }, { char: '\u00AE', name: 'Registered' },
+  { char: '\u2122', name: 'Trademark' }, { char: '\u0040', name: 'At' },
+  { char: '\u2030', name: 'Per Mille' }, { char: '\u2103', name: 'Celsius' },
+  { char: '\u2109', name: 'Fahrenheit' }, { char: '\u0025', name: 'Percent' },
+  { char: '\u2318', name: 'Command' }, { char: '\u2325', name: 'Option' },
+  { char: '\u21E7', name: 'Shift' }, { char: '\u2303', name: 'Control' },
+  { char: '\u232B', name: 'Delete' }, { char: '\u238B', name: 'Escape' },
+  { char: '\u23CE', name: 'Return' }, { char: '\u2328', name: 'Keyboard' },
+  { char: '\u2605', name: 'Black Star' }, { char: '\u2606', name: 'White Star' },
+  { char: '\u2665', name: 'Heart' }, { char: '\u2666', name: 'Diamond' },
+  { char: '\u2663', name: 'Club' }, { char: '\u2660', name: 'Spade' },
+  { char: '\u266A', name: 'Music Note' }, { char: '\u266B', name: 'Beamed Notes' },
+  { char: '\u2713', name: 'Check Mark' }, { char: '\u2717', name: 'Cross Mark' },
+  { char: '\u2620', name: 'Skull' }, { char: '\u2622', name: 'Radioactive' },
+  { char: '\u2623', name: 'Biohazard' }, { char: '\u269B', name: 'Atom' },
+  { char: '\u2642', name: 'Male' }, { char: '\u2640', name: 'Female' },
+  { char: '\u263A', name: 'Smiley' }, { char: '\u2602', name: 'Umbrella' },
+  { char: '\u2603', name: 'Snowman' }, { char: '\u262E', name: 'Peace' },
+  { char: '\u262F', name: 'Yin Yang' }, { char: '\u2615', name: 'Hot Beverage' },
+  { char: '\u2702', name: 'Scissors' }, { char: '\u270F', name: 'Pencil' },
+];

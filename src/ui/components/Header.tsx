@@ -8,9 +8,10 @@ export function Header({ query, onQueryChange }: HeaderProps) {
     <header className="header">
       <div className="logo">{'\u2318'}+C</div>
       <input
-        type="text"
+        type="search"
         className="search-input"
         placeholder="Search"
+        aria-label="Search characters"
         value={query}
         onChange={(e) => onQueryChange(e.target.value)}
       />

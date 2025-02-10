@@ -10,7 +10,7 @@ describe('Header', () => {
 
   it('renders the search input', () => {
     render(<Header query="" onQueryChange={() => {}} />);
-    expect(screen.getByRole('textbox')).toBeInTheDocument();
+    expect(screen.getByRole('searchbox')).toBeInTheDocument();
   });
 
   it('displays the current query value', () => {

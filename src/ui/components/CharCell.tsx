@@ -10,6 +10,7 @@ export function CharCell({ char, name, onClick }: CharCellProps) {
       type="button"
       className="char-cell"
       title={name}
+      aria-label={`Copy ${name}`}
       onClick={onClick}
     >
       {char}

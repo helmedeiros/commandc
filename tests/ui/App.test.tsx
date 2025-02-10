@@ -39,7 +39,7 @@ describe('App', () => {
 
   it('filters by search query', () => {
     render(<App clipboard={new InMemoryClipboard()} />);
-    const input = screen.getByRole('textbox');
+    const input = screen.getByRole('searchbox');
     fireEvent.change(input, { target: { value: 'copyright' } });
     expect(screen.getByTitle('Copyright')).toBeInTheDocument();
   });

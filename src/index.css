@@ -1,8 +1,25 @@
 :root {
+  --bg: #111118;
+  --bg-cell: #1a1a24;
+  --bg-cell-hover: #2a2a38;
+  --bg-tab: transparent;
+  --bg-tab-active: #2a2a38;
+  --text: #ccc;
+  --text-bright: #fff;
+  --text-muted: #666;
+  --border: #2a2a38;
+  --accent: #fff;
+  --toast-bg: #333;
+  --cell-size: 70px;
+
   font-family: system-ui, -apple-system, sans-serif;
   color-scheme: dark;
-  color: #eee;
-  background: #111;
+  color: var(--text);
+  background: var(--bg);
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
@@ -12,4 +29,109 @@ body {
 #root {
   max-width: 1400px;
   margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-bright);
+  letter-spacing: -0.5px;
+}
+
+.search-input {
+  background: var(--bg-cell);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  outline: none;
+  width: 200px;
+}
+
+.search-input:focus {
+  border-color: var(--text-muted);
+}
+
+/* Category Tabs */
+.category-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 8px 0 16px;
+  overflow-x: auto;
+}
+
+.category-tab {
+  all: unset;
+  cursor: pointer;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  border-radius: 4px;
+  white-space: nowrap;
+  transition: color 0.15s, background 0.15s;
+}
+
+.category-tab:hover {
+  color: var(--text);
+}
+
+.category-tab.active {
+  color: var(--text-bright);
+  background: var(--bg-tab-active);
+}
+
+/* Character Grid */
+.char-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--cell-size), 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.char-cell {
+  all: unset;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  font-size: 1.6rem;
+  color: var(--text-bright);
+  background: var(--bg-cell);
+  transition: background 0.15s;
+}
+
+.char-cell:hover {
+  background: var(--bg-cell-hover);
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--toast-bg);
+  color: var(--text-bright);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  animation: toast-in 0.2s ease-out;
+  pointer-events: none;
+}
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
 }

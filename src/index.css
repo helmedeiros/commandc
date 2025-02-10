@@ -135,3 +135,34 @@ body {
   from { opacity: 0; transform: translateX(-50%) translateY(10px); }
   to { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
+
+/* Responsive */
+@media (max-width: 600px) {
+  :root {
+    --cell-size: 55px;
+  }
+
+  .header {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .search-input {
+    width: 100%;
+    order: 2;
+  }
+
+  .category-tabs {
+    gap: 2px;
+    padding: 4px 0 12px;
+  }
+
+  .category-tab {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+  }
+
+  .char-cell {
+    font-size: 1.3rem;
+  }
+}

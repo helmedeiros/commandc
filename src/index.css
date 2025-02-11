@@ -116,6 +116,11 @@ body {
   background: var(--bg-cell-hover);
 }
 
+.char-cell.copied {
+  background: #2a5a2a;
+  transition: background 0s;
+}
+
 /* Toast */
 .toast {
   position: fixed;

@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 import type { Category } from '../domain/Category';
 import type { Clipboard } from '../domain/ports/Clipboard';
-import { getByCategory } from '../domain/CharacterRegistry';
+import { getByCategory, getAllCharacters } from '../domain/CharacterRegistry';
 import { searchCharacters } from '../domain/SearchCharacters';
 import { Header } from './components/Header';
 import { CategoryTabs } from './components/CategoryTabs';
@@ -18,7 +18,7 @@ export function App({ clipboard }: AppProps) {
   const [toast, setToast] = useState<string | null>(null);
 
   const entries = query.trim() !== ''
-    ? searchCharacters(query, getByCategory(category))
+    ? searchCharacters(query, getAllCharacters())
     : getByCategory(category);
 
   const handleCopy = useCallback(async (char: string) => {

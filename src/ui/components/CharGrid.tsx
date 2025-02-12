@@ -7,6 +7,10 @@ export interface CharGridProps {
 }
 
 export function CharGrid({ entries, onCopy }: CharGridProps) {
+  if (entries.length === 0) {
+    return <div className="char-grid-empty">No characters found</div>;
+  }
+
   return (
     <div className="char-grid">
       {entries.map((entry) => (

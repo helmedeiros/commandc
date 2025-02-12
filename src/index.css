@@ -116,6 +116,13 @@ body {
   background: var(--bg-cell-hover);
 }
 
+.char-grid-empty {
+  padding: 48px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
 .char-cell.copied {
   background: #2a5a2a;
   transition: background 0s;

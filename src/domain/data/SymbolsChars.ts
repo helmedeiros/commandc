@@ -21,4 +21,9 @@ export const SYMBOLS_CHARS: readonly CharEntry[] = [
   { char: '\u2603', name: 'Snowman' }, { char: '\u262E', name: 'Peace' },
   { char: '\u262F', name: 'Yin Yang' }, { char: '\u2615', name: 'Hot Beverage' },
   { char: '\u2702', name: 'Scissors' }, { char: '\u270F', name: 'Pencil' },
+  { char: '\u2611', name: 'Ballot Check' }, { char: '\u2612', name: 'Ballot X' },
+  { char: '\u2604', name: 'Comet' }, { char: '\u2618', name: 'Shamrock' },
+  { char: '\u2638', name: 'Dharma Wheel' }, { char: '\u263B', name: 'Black Smiley' },
+  { char: '\u00B0', name: 'Degree' }, { char: '\u2116', name: 'Numero' },
+  { char: '\u2117', name: 'Sound Recording Copyright' },
 ];

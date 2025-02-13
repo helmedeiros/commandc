@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import type { Category } from '../domain/Category';
 import type { Clipboard } from '../domain/ports/Clipboard';
 import { getByCategory, getAllCharacters } from '../domain/CharacterRegistry';
@@ -35,6 +35,18 @@ export function App({ clipboard }: AppProps) {
   const handleCategoryChange = useCallback((cat: Category) => {
     setCategory(cat);
     setQuery('');
+  }, []);
+
+  // Global keyboard shortcut: "/" focuses search
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === '/' && document.activeElement?.tagName !== 'INPUT') {
+        e.preventDefault();
+        document.querySelector<HTMLInputElement>('.search-input')?.focus();
+      }
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
   }, []);
 
   return (

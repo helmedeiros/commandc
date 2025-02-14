@@ -90,6 +90,12 @@ body {
   background: var(--bg-tab-active);
 }
 
+.category-count {
+  font-size: 0.7rem;
+  opacity: 0.5;
+  margin-left: 4px;
+}
+
 /* Character Grid */
 .char-grid {
   display: grid;

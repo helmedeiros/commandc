@@ -1,4 +1,5 @@
 import { CATEGORIES, type Category } from '../../domain/Category';
+import { getByCategory } from '../../domain/CharacterRegistry';
 
 export interface CategoryTabsProps {
   active: Category;
@@ -16,6 +17,7 @@ export function CategoryTabs({ active, onSelect }: CategoryTabsProps) {
           onClick={() => onSelect(cat)}
         >
           {cat}
+          <span className="category-count">{getByCategory(cat).length}</span>
         </button>
       ))}
     </nav>

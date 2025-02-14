@@ -15,4 +15,10 @@ export const ARROWS_CHARS: readonly CharEntry[] = [
   { char: '\u21C4', name: 'Right Over Left' }, { char: '\u21C6', name: 'Left Over Right' },
   { char: '\u27A1', name: 'Black Right' }, { char: '\u2B05', name: 'Black Left' },
   { char: '\u2B06', name: 'Black Up' }, { char: '\u2B07', name: 'Black Down' },
+  { char: '\u21E0', name: 'Dashed Left' }, { char: '\u21E1', name: 'Dashed Up' },
+  { char: '\u21E2', name: 'Dashed Right' }, { char: '\u21E3', name: 'Dashed Down' },
+  { char: '\u21B2', name: 'Down Left' }, { char: '\u21B3', name: 'Down Right' },
+  { char: '\u21E8', name: 'White Right' }, { char: '\u21E6', name: 'White Left' },
+  { char: '\u21E9', name: 'White Down' }, { char: '\u21E7', name: 'White Up' },
+  { char: '\u27F3', name: 'Clockwise Arrow' }, { char: '\u27F2', name: 'Anticlockwise Arrow' },
 ];

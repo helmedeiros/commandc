@@ -18,3 +18,10 @@ describe('SearchStatus', () => {
     expect(screen.getByText(/1 result for/)).toBeInTheDocument();
   });
 });
+
+describe('SearchStatus edge cases', () => {
+  it('handles whitespace-only query as empty', () => {
+    const { container } = render(<SearchStatus query="   " count={0} />);
+    expect(container.innerHTML).toBe('');
+  });
+});

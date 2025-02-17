@@ -26,4 +26,10 @@ export const NUMBERS_CHARS: readonly CharEntry[] = [
   { char: '\u2464', name: 'Circled 5' }, { char: '\u2465', name: 'Circled 6' },
   { char: '\u2466', name: 'Circled 7' }, { char: '\u2467', name: 'Circled 8' },
   { char: '\u2468', name: 'Circled 9' },
+  { char: '\u2474', name: 'Parenthesized 1' }, { char: '\u2475', name: 'Parenthesized 2' },
+  { char: '\u2476', name: 'Parenthesized 3' }, { char: '\u2477', name: 'Parenthesized 4' },
+  { char: '\u2478', name: 'Parenthesized 5' }, { char: '\u2479', name: 'Parenthesized 6' },
+  { char: '\u247A', name: 'Parenthesized 7' }, { char: '\u247B', name: 'Parenthesized 8' },
+  { char: '\u247C', name: 'Parenthesized 9' },
 ];
+// Parenthesized digits appended via data expansion

@@ -184,3 +184,9 @@ body {
     font-size: 1.3rem;
   }
 }
+
+.search-status {
+  padding: 8px 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}

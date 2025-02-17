@@ -15,4 +15,7 @@ export const EMOJI_CHARS: readonly CharEntry[] = [
   { char: '\u2705', name: 'White Check' }, { char: '\u274C', name: 'Cross Mark' },
   { char: '\u26A0\uFE0F', name: 'Warning' }, { char: '\uD83C\uDF0E', name: 'Globe' },
   { char: '\u2600\uFE0F', name: 'Sun' }, { char: '\u2744\uFE0F', name: 'Snowflake' },
+  { char: '\uD83C\uDF4E', name: 'Red Apple' }, { char: '\uD83C\uDF55', name: 'Pizza' },
+  { char: '\uD83C\uDFC6', name: 'Trophy' }, { char: '\uD83D\uDCBB', name: 'Laptop' },
 ];
+// Additional emoji appended via data expansion

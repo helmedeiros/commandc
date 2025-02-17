@@ -11,4 +11,6 @@ export const CURRENCY_CHARS: readonly CharEntry[] = [
   { char: '\u20B5', name: 'Cedi' }, { char: '\u00A4', name: 'Currency' },
   { char: '\u20A3', name: 'French Franc' }, { char: '\u20A6', name: 'Naira' },
   { char: '\u20A7', name: 'Peseta' },
+  { char: '\u20B0', name: 'German Penny' }, { char: '\u20B3', name: 'Austral' },
+  { char: '\u20B8', name: 'Tenge' }, { char: '\u20BC', name: 'Manat' },
 ];

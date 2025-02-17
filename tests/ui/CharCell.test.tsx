@@ -20,3 +20,11 @@ describe('CharCell', () => {
     expect(onClick).toHaveBeenCalledOnce();
   });
 });
+
+describe('CharCell copy flash', () => {
+  it('adds copied class on click', async () => {
+    const { container } = render(<CharCell char="X" name="Test" onClick={() => {}} />);
+    fireEvent.click(screen.getByText('X'));
+    expect(container.querySelector('.copied')).not.toBeNull();
+  });
+});

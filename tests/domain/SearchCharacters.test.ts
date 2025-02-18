@@ -58,3 +58,11 @@ describe('searchCharacters', () => {
     expect(result).toHaveLength(2);
   });
 });
+
+describe('searchCharacters special characters', () => {
+  it('handles regex special chars in query safely', () => {
+    const entries = [{ char: '+', name: 'Plus' }];
+    const result = searchCharacters('plu', entries);
+    expect(result).toHaveLength(1);
+  });
+});

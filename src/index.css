@@ -207,3 +207,21 @@ body {
 .char-cell:active {
   transform: scale(0.95);
 }
+
+.footer {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 16px 0;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.footer kbd {
+  background: var(--bg-cell);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 1px 5px;
+  font-family: inherit;
+  font-size: 0.7rem;
+}

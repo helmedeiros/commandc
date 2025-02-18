@@ -8,6 +8,7 @@ import { CategoryTabs } from './components/CategoryTabs';
 import { CharGrid } from './components/CharGrid';
 import { Toast } from './components/Toast';
 import { SearchStatus } from './components/SearchStatus';
+import { Footer } from './components/Footer';
 
 export interface AppProps {
   clipboard: Clipboard;
@@ -57,6 +58,7 @@ export function App({ clipboard }: AppProps) {
       <SearchStatus query={query} count={entries.length} />
       <CharGrid entries={entries} onCopy={handleCopy} />
       <Toast message={toast} />
+      <Footer />
     </>
   );
 }

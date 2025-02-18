@@ -28,4 +28,6 @@ export const LETTERS_CHARS: readonly CharEntry[] = [
   { char: '\u0160', name: 'S Caron' }, { char: '\u0161', name: 's Caron' },
   { char: '\u017D', name: 'Z Caron' }, { char: '\u017E', name: 'z Caron' },
   { char: '\u0178', name: 'Y Diaeresis' },
+  { char: '\u0110', name: 'D Stroke' }, { char: '\u0111', name: 'd Stroke' },
+  { char: '\u0141', name: 'L Stroke' }, { char: '\u0142', name: 'l Stroke' },
 ];

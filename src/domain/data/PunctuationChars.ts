@@ -14,4 +14,6 @@ export const PUNCTUATION_CHARS: readonly CharEntry[] = [
   { char: '\u00A1', name: 'Inverted Exclamation' }, { char: '\u00BF', name: 'Inverted Question' },
   { char: '\u2016', name: 'Double Vertical Line' },
   { char: '\u204B', name: 'Reversed Pilcrow' },
+  { char: '\u2032', name: 'Prime' }, { char: '\u2033', name: 'Double Prime' },
+  { char: '\u2034', name: 'Triple Prime' }, { char: '\u2036', name: 'Reversed Double Prime' },
 ];

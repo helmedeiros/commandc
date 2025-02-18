@@ -203,3 +203,7 @@ body {
   background: var(--border);
   border-radius: 2px;
 }
+
+.char-cell:active {
+  transform: scale(0.95);
+}

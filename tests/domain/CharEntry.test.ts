@@ -31,3 +31,12 @@ describe('createCharEntry', () => {
     expect(entry.name).toBe('Grinning Face');
   });
 });
+
+describe('CharEntry immutability', () => {
+  it('returns a new object each time', () => {
+    const a = createCharEntry('A', 'Letter A');
+    const b = createCharEntry('A', 'Letter A');
+    expect(a).not.toBe(b);
+    expect(a).toEqual(b);
+  });
+});

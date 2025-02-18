@@ -44,3 +44,13 @@ describe('App', () => {
     expect(screen.getByTitle('Copyright')).toBeInTheDocument();
   });
 });
+
+describe('App category behavior', () => {
+  it('clears search when switching categories', () => {
+    render(<App clipboard={new InMemoryClipboard()} />);
+    const input = screen.getByRole('searchbox') as HTMLInputElement;
+    fireEvent.change(input, { target: { value: 'arrow' } });
+    fireEvent.click(screen.getByText('Math'));
+    expect(input.value).toBe('');
+  });
+});

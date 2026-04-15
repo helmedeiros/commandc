@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect } from 'react';
-import type { Category } from '../domain/Category';
+import { CATEGORIES, type Category } from '../domain/Category';
 import type { Clipboard } from '../domain/ports/Clipboard';
 import { getByCategory, getAllCharacters } from '../domain/CharacterRegistry';
 import { searchCharacters } from '../domain/SearchCharacters';
@@ -39,12 +39,22 @@ export function App({ clipboard }: AppProps) {
     setQuery('');
   }, []);
 
-  // Global keyboard shortcut: "/" focuses search
+  // Global keyboard shortcuts
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
-      if (e.key === '/' && document.activeElement?.tagName !== 'INPUT') {
+      const isInput = document.activeElement?.tagName === 'INPUT';
+      if (e.key === '/' && !isInput) {
         e.preventDefault();
         document.querySelector<HTMLInputElement>('.search-input')?.focus();
+      }
+      if ((e.key === 'ArrowLeft' || e.key === 'ArrowRight') && !isInput) {
+        e.preventDefault();
+        setCategory((prev) => {
+          const idx = CATEGORIES.indexOf(prev);
+          if (e.key === 'ArrowLeft') return CATEGORIES[(idx - 1 + CATEGORIES.length) % CATEGORIES.length] as Category;
+          return CATEGORIES[(idx + 1) % CATEGORIES.length] as Category;
+        });
+        setQuery('');
       }
     };
     window.addEventListener('keydown', handler);

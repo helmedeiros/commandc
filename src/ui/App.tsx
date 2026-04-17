@@ -19,6 +19,7 @@ export function App({ clipboard }: AppProps) {
   const [category, setCategory] = useState<Category>('Popular');
   const [query, setQuery] = useState('');
   const [toast, setToast] = useState<string | null>(null);
+  const [shortcutsOpen, setShortcutsOpen] = useState(false);
 
   const entries = query.trim() !== ''
     ? searchCharacters(query, getAllCharacters())
@@ -48,6 +49,10 @@ export function App({ clipboard }: AppProps) {
         e.preventDefault();
         document.querySelector<HTMLInputElement>('.search-input')?.focus();
       }
+      if (e.key === '?' && !isInput) {
+        e.preventDefault();
+        setShortcutsOpen((prev) => !prev);
+      }
       if ((e.key === 'ArrowLeft' || e.key === 'ArrowRight') && !isInput) {
         e.preventDefault();
         setCategory((prev) => {
@@ -68,7 +73,7 @@ export function App({ clipboard }: AppProps) {
       <CategoryTabs active={category} onSelect={handleCategoryChange} />
       <SearchStatus query={query} count={entries.length} />
       <CharGrid entries={entries} onCopy={handleCopy} />
-      <ShortcutsPanel />
+      <ShortcutsPanel open={shortcutsOpen} onToggle={() => setShortcutsOpen(!shortcutsOpen)} />
       <Toast message={toast} />
       <Footer />
     </>

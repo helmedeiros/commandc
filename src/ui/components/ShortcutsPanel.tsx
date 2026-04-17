@@ -1,16 +1,18 @@
-import { useState } from 'react';
 import { SHORTCUTS } from '../../domain/Shortcut';
 
-export function ShortcutsPanel() {
-  const [open, setOpen] = useState(false);
+export interface ShortcutsPanelProps {
+  open: boolean;
+  onToggle: () => void;
+}
 
+export function ShortcutsPanel({ open, onToggle }: ShortcutsPanelProps) {
   return (
     <div className="shortcuts-panel">
       <button
         type="button"
         className="shortcuts-toggle"
         aria-label={open ? 'Hide keyboard shortcuts' : 'Show keyboard shortcuts'}
-        onClick={() => setOpen(!open)}
+        onClick={onToggle}
       >
         {open ? '\u2715' : '\u2328'}
       </button>

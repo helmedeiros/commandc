@@ -1,37 +1,34 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { ShortcutsPanel } from '../../src/ui/components/ShortcutsPanel';
 
-function openPanel() {
-  render(<ShortcutsPanel />);
-  fireEvent.click(screen.getByLabelText('Show keyboard shortcuts'));
-}
-
 describe('ShortcutsPanel', () => {
-  it('is hidden by default', () => {
-    render(<ShortcutsPanel />);
+  it('is hidden when open is false', () => {
+    render(<ShortcutsPanel open={false} onToggle={() => {}} />);
     expect(screen.queryByText('Keyboard Shortcuts')).toBeNull();
   });
 
-  it('opens on toggle click and shows all shortcuts', () => {
-    openPanel();
+  it('shows all shortcuts when open', () => {
+    render(<ShortcutsPanel open={true} onToggle={() => {}} />);
     expect(screen.getByText('Keyboard Shortcuts')).toBeInTheDocument();
     expect(screen.getByText('Copy character to clipboard')).toBeInTheDocument();
     expect(screen.getByText('Focus search')).toBeInTheDocument();
     expect(screen.getByText('Clear search and blur')).toBeInTheDocument();
     expect(screen.getByText('Navigate categories')).toBeInTheDocument();
+    expect(screen.getByText('Toggle shortcuts panel')).toBeInTheDocument();
   });
 
   it('renders key badges when open', () => {
-    openPanel();
+    render(<ShortcutsPanel open={true} onToggle={() => {}} />);
     expect(screen.getByText('/')).toBeInTheDocument();
     expect(screen.getByText('Esc')).toBeInTheDocument();
-    expect(screen.getByText('Click')).toBeInTheDocument();
+    expect(screen.getByText('?')).toBeInTheDocument();
   });
 
-  it('hides when toggle is clicked again', () => {
-    openPanel();
-    fireEvent.click(screen.getByLabelText('Hide keyboard shortcuts'));
-    expect(screen.queryByText('Keyboard Shortcuts')).toBeNull();
+  it('calls onToggle when button is clicked', () => {
+    const onToggle = vi.fn();
+    render(<ShortcutsPanel open={false} onToggle={onToggle} />);
+    fireEvent.click(screen.getByLabelText('Show keyboard shortcuts'));
+    expect(onToggle).toHaveBeenCalledOnce();
   });
 });

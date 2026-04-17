@@ -9,6 +9,7 @@ import { CharGrid } from './components/CharGrid';
 import { Toast } from './components/Toast';
 import { SearchStatus } from './components/SearchStatus';
 import { Footer } from './components/Footer';
+import { ShortcutsPanel } from './components/ShortcutsPanel';
 
 export interface AppProps {
   clipboard: Clipboard;
@@ -67,6 +68,7 @@ export function App({ clipboard }: AppProps) {
       <CategoryTabs active={category} onSelect={handleCategoryChange} />
       <SearchStatus query={query} count={entries.length} />
       <CharGrid entries={entries} onCopy={handleCopy} />
+      <ShortcutsPanel />
       <Toast message={toast} />
       <Footer />
     </>

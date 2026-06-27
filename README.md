@@ -2,8 +2,6 @@
 
 Find and copy special characters to your clipboard. Click or tap on a character and it will be copied.
 
-![commandc screenshot](docs/screenshot.png)
-
 ## Features
 
 - 10 categories: Popular, Letters, Punctuation, Math, Numbers, Currency, Symbols, Hieroglyphs, Arrows, Emoji

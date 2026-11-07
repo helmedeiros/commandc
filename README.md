@@ -2,6 +2,18 @@
 
 Find and copy special characters to your clipboard. Click or tap on a character and it will be copied.
 
+![Browsing categories and copying characters](docs/demo/browse-and-copy.gif)
+
+Click a character to copy it; switch categories with a click or the arrow keys.
+
+![Searching characters by name](docs/demo/search.gif)
+
+Press `/` and search every category by name.
+
+![Keyboard shortcuts panel](docs/demo/shortcuts.gif)
+
+Press `?` to show the keyboard shortcuts.
+
 ## Features
 
 - 10 categories: Popular, Letters, Punctuation, Math, Numbers, Currency, Symbols, Hieroglyphs, Arrows, Emoji
